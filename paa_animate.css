@@ -20,16 +20,20 @@
 
 
 /* Transition Effects */
+
+/* The stle rule is for navigation links and the rule is going to make the links position to relative, the text color will be whitesmoke, the color will tranit within an half second. */
 nav#gameLinks a {
     position: relative;
     color: whitesmoke;
     transition: color .5s;
 }
 
+/* The rule is for when the mouse hovers over the links and the rule make the text color to an orange color. */
 nav#gameLinks a:hover {
     color: rgb(255, 194, 99);
 }
 
+/* The rule is for the links and the rule is for when after the mouse is touching the links, the rule is going to make a line of color that transits under the links. The color is a linear gradient that goes from yellow, to orange. the transition is within an half second. */
 nav#gameLinks a::after {
     content: "";
     position: absolute;
@@ -43,17 +47,19 @@ nav#gameLinks a::after {
     transition: .5s;
 }
 
-
+/* The rule is for the color line under the links and the opacity is 1 so that you can see the color line, and the width is 100%. So the line will take up all the space of the links. */
 nav#gameLinks a:hover::after {
     opacity: 1;
     width: 100%;
 }
 
 /* Sprite Styles */
+/* The rule is for the div with the class of sprite and the rule is going to make everything that is in the div of the class of sprite will have a fixed position. */
 div.sprite {
     position: absolute;
 }
 
+/* The rule is for the div with the id of bat and the rule is going to make the bat image show up, have an animation of playSprite and have a two second interval, have 39 steps and have an infinite loop. The div will also have an animation of flyRight and will have a time interval of 8 seconds ad also infinite loop and linear. */
 div#bat {
     width: 40px;
     height: 50px;
@@ -63,6 +69,7 @@ div#bat {
     animation: playSprite 2s steps(39) infinite, flyRight 8s linear infinite;
 }
 
+/* The rule is for the div with the id of butterfly and the rule is going to make the bfly image show up, have an animation of playSprite and have a three second delay, have 33 steps and have an infinite loop. The div will also have an animation of flyRight and will have a time interval of 6 seconds ad also infinite loop.  */
 div#butterfly {
     width: 35px;
     height: 35px;
@@ -72,6 +79,7 @@ div#butterfly {
     animation: playSprite 1s 3s steps(33) infinite, flyRight 6s cubic-bezier(0, 1, 0.73, 0) infinite;
 }
 
+/* The rule is for the div with the id of fox and the rule is going to make the fox image show up, have an animation of playSprite, have 27steps, have an infinite loop. The fox will not stop jumping. The image will be in the left center, will not have tiling. */
 div#fox {
     width: 280px;
     height: 260px;
@@ -83,29 +91,37 @@ div#fox {
 
 
 /* Animation Styles */
+/* The rule is for the animations that have a name of playSprite and at 100% the background-position will be right center. This rule will apply to all the elements that are asinged to the playSprite Animations.  */
 @keyframes playSprite {
     100% {
         background-position: right center;
     }
 }
 
+/* The rule is for the animations that have a name of flyRight and the rule is for 25%, 50%, 65%, 90%, 100%. The rule are for specified times.  */
 @keyframes flyRight {
+
+    /* At 25%, the top coordinate will have 150 pixels. */
     25% {
         top: 150px;
     }
 
+    /* At 50%, the top coordinate will have 55 pixels. */
     50% {
         top: 55px;
     }
 
+    /* At 65%, the top coordinate will have 120 pixels. */
     65% {
         top: 120px;
     }
 
+    /* At 90%, the top coordinate will have 50 pixels. */
     90% {
         top: 50px;
     }
 
+    /* At 100%, the top coordinate will have 80 pixels. */
     100% {
         top: 80px;
         left: 100%;
